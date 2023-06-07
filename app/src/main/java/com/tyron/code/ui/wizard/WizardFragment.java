@@ -320,7 +320,7 @@ public class WizardFragment extends Fragment {
       mSaveLocationLayout.setHelperText(getString(R.string.wizard_scoped_storage_info));
       mSaveLocationLayout
           .getEditText()
-          .setText(requireContext().getExternalFilesDir("Projects").getAbsolutePath());
+          .setText(Environment.getExternalStorageDirectory().getAbsolutePath());
       mSaveLocationLayout.getEditText().setInputType(InputType.TYPE_NULL);
     }
     //        mSaveLocationLayout.setEndIconOnClickListener(view -> {
