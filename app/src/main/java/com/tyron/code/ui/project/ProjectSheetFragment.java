@@ -343,7 +343,7 @@ public class ProjectSheetFragment extends BottomSheetDialogFragment {
               /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                 path = requireContext().getExternalFilesDir("/Projects").getAbsolutePath();
               } else {*/
-                path = Environment.getExternalStorageDirectory() + "/CodeAssistProjects";
+                path = Environment.getExternalStorageDirectory() + "/Projects";
                 String fileName = ".nomedia";
                 File nomediaFile = new File(path, fileName);
                 try {
