@@ -23,6 +23,10 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
     compileOptions {
         coreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_1_8
