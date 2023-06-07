@@ -16,7 +16,7 @@ android {
 	
     defaultConfig {
         targetSdkVersion 27
-		minSdkVersion 21		
+		minSdkVersion 26		
 		applicationId "com.tyron.code"
 		versionCode 29
 		versionName "0.2.9-alpha03"
