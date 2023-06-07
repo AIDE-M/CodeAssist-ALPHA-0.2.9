@@ -177,9 +177,9 @@ public class HomeFragment extends Fragment {
     } else {
       if (permissionsGranted()) {
         savePath();
-      } else
-      requestPermissions();
-    }
+      } else{
+        requestPermissions();
+      }
     }
   }
 
@@ -188,8 +188,7 @@ public class HomeFragment extends Fragment {
   }
 
   private void savePath() {
-    String path =
-        Environment.getExternalStorageDirectory().getAbsolutePath() + "/Projects";
+    String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Projects";
     File file = new File(path);
     if (file.exists()) {
     } else {
