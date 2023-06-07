@@ -260,7 +260,7 @@ public class WizardFragment extends Fragment {
             PreferenceManager.getDefaultSharedPreferences(requireContext())
                 .getString(
                     SharedPreferenceKeys.PROJECT_SAVE_PATH,
-                    requireContext().getExternalFilesDir("Projects").getAbsolutePath()));
+                    new File(Environment.getExternalStorageDirectory(), "Projects").getAbsolutePath()));
     initializeSaveLocation();
 
     mSaveLocationLayout
@@ -320,7 +320,7 @@ public class WizardFragment extends Fragment {
       mSaveLocationLayout.setHelperText(getString(R.string.wizard_scoped_storage_info));
       mSaveLocationLayout
           .getEditText()
-          .setText(Environment.getExternalStorageDirectory().getAbsolutePath());
+          .setText(new File(Environment.getExternalStorageDirectory(), "Projects").getAbsolutePath());
       mSaveLocationLayout.getEditText().setInputType(InputType.TYPE_NULL);
     }
     //        mSaveLocationLayout.setEndIconOnClickListener(view -> {
@@ -452,7 +452,7 @@ public class WizardFragment extends Fragment {
             PreferenceManager.getDefaultSharedPreferences(requireContext())
                     .getString(
                         SharedPreferenceKeys.PROJECT_SAVE_PATH,
-                        requireContext().getExternalFilesDir("Projects").getAbsolutePath())
+                        new File(Environment.getExternalStorageDirectory(), "Projects").getAbsolutePath())
                 + "/"
                 + editable.toString());
     String suffix = "";
