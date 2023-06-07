@@ -71,10 +71,10 @@ public class HomeFragment extends Fragment {
                         (d, which) -> {
                           mShowDialogOnPermissionGrant = false;
                           setSavePath(
-                              requireContext().getExternalFilesDir("/Projects").getAbsolutePath());
+                              new File(Environment.getExternalStorageDirectory(), "Projects").getAbsolutePath());
                         })
                     .show();
-                setSavePath(requireContext().getExternalFilesDir("/Projects").getAbsolutePath());
+                setSavePath(new File(Environment.getExternalStorageDirectory(), "Projects").getAbsolutePath());
               } else {
                 if (mShowDialogOnPermissionGrant) {
                   mShowDialogOnPermissionGrant = false;
@@ -175,6 +175,11 @@ public class HomeFragment extends Fragment {
         requestPermissions();
       }
     } else {
+      if (permissionsGranted()) {
+        savePath();
+      } else
+      requestPermissions();
+    }
     }
   }
 
@@ -184,7 +189,7 @@ public class HomeFragment extends Fragment {
 
   private void savePath() {
     String path =
-        Environment.getExternalStorageDirectory().getAbsolutePath() + "/CodeAssistProjects";
+        Environment.getExternalStorageDirectory().getAbsolutePath() + "/Projects";
     File file = new File(path);
     if (file.exists()) {
     } else {
